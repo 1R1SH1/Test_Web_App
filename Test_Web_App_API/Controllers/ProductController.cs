@@ -13,12 +13,6 @@ namespace Test_Web_App_API.Controllers
         {
             Core = core;
         }
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Product product)
-        {
-            await Core.PostProduct(product);
-            return Ok();
-        }
         [HttpGet]
         public async Task<IEnumerable<Product>> Get()
         {

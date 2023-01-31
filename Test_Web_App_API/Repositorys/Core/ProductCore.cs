@@ -11,12 +11,6 @@ namespace Test_Web_App_API.Repositorys.Core
         {
             Context = dataContext;
         }
-        public async Task PostProduct(Product product)
-        {
-            await Context.Products.AddAsync(product);
-            await Context.SaveChangesAsync();
-        }
-
         public async Task<IEnumerable<Product>> GetProduct()
         {
             return await Context.Products

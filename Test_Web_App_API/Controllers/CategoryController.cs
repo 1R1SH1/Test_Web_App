@@ -13,12 +13,6 @@ namespace Test_Web_App_API.Controllers
         {
             Core = core;
         }
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Category category)
-        {
-            await Core.PostCategory(category);
-            return Ok();
-        }
         [HttpGet]
         public async Task<IEnumerable<Category>> Get()
         {

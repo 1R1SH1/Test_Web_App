@@ -11,11 +11,6 @@ namespace Test_Web_App_API.Repositorys.Core
         {
             Context = dataContext;
         }
-        public async Task PostCategory(Category category)
-        {
-            await Context.Categories.AddAsync(category);
-            await Context.SaveChangesAsync();
-        }
         public async Task<IEnumerable<Category>> GetCategory()
         {
             return await Context.Categories.ToListAsync();
