@@ -1,0 +1,54 @@
+﻿@using Test_Web_App.Models.Classes
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" />
+    <style type="text/css">
+        table {
+            table-layout: fixed;
+            width: 100%
+        }
+
+        td {
+            word-wrap: break-word;
+        }
+
+        .btn {
+            text-decoration: none;
+            position: center;
+            height: 10px;
+            margin: 5px 5px 5px 5px;
+            font-size: 10px;
+            cursor: pointer;
+            outline: none;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div style="align-content:center;">        
+        <table class="simple-little-table" border="1" cellspacing='0'>
+            <tr>
+                <td width="120">Category Name</td>
+                <td width="120">Products</td>
+            </tr>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.CategoryId</td>
+                    <td>@category.ProductName</td>
+                </tr>
+            }
+        </table>
+        <br />
+
+        <a class="btn" asp-action="Add">Add</a>
+    </div>
+</body>
+</html>
