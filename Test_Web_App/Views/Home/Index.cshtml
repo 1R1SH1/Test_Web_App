@@ -41,14 +41,13 @@
             @foreach (var category in Model)
             {
                 <tr>
-                    <td>@category.CategoryId</td>
+                    <td>@category.Categories.Name</td>
                     <td>@category.ProductName</td>
                 </tr>
             }
         </table>
         <br />
 
-        <a class="btn" asp-action="Add">Add</a>
     </div>
 </body>
 </html>
