@@ -21,6 +21,7 @@ namespace Test_Web_App_API.Repositorys.Core
         {
             return await Context.Products
                                 .FromSql($"Select p.Id, p.CategoryId, p.ProductName, c.Name From dbo.Products p Join dbo.Categories c On c.Id = p.CategoryId")
+                                .Include(p => p.Categories)
                                 .ToListAsync();
         }
     }
